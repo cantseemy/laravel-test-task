@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employees;
-
 
 class EmployeesController extends Controller
 {
@@ -13,7 +11,6 @@ class EmployeesController extends Controller
     	$employee = Employees::findOrFail($id);
     	return view('employees.create', compact('employee'));
     }
-
 
     public function store()
     {
@@ -37,13 +34,11 @@ class EmployeesController extends Controller
     	return redirect("/companies/{$employee->companies_id}");
     }
 
-
     public function edit($id)
     {
     	$employee = Employees::findOrFail($id);
     	return view('employees.edit', compact('employee'));
     }
-
 
     public function update($id)
     {
@@ -59,7 +54,6 @@ class EmployeesController extends Controller
 
     	return redirect("/companies/{$employee->companies_id}");
     }
-
 
     public function destroy($id)
     {
