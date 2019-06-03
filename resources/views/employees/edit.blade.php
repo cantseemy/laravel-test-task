@@ -18,7 +18,7 @@
 			<input type="text" name="last_name" placeholder="Email" value="{{ $employee->last_name }}" required>
 		</div>
 		<div>
-			<input type="text" name="companies_id" value="{{ $employee->companies_id }}" readonly>
+			<input type="hidden" name="companies_id" value="{{ $employee->companies_id }}" readonly>
 		</div>
 		<div>
 			<input type="text" name="email" placeholder="Website" value="{{ $employee->email }}" required>
