@@ -4,8 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Companies;
 
+
 class CompaniesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['store', 'update', 'edit', 'destroy', 'create']);
+    }
+
     public function index()
     {
         //$companies = Companies::all();

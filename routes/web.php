@@ -28,3 +28,7 @@ Route::get('/employees/{companies}/create', 'EmployeesController@create');
 Route::delete('/employees/{employees}', 'EmployeesController@destroy');
 Route::get('/employees/{employees}/edit', 'EmployeesController@edit');
 Route::patch('/employees/{employees}', 'EmployeesController@update');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

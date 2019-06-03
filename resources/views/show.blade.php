@@ -26,6 +26,7 @@
                                         <td>{{$employ->last_name}}</td>
                                         <td>{{$employ->email}}</td>
                                         <td>{{$employ->phone}}</td>
+                                        @if (!Auth::guest())
                                         <td>
                                             <form action="/employees/{{$employ->id}}/edit">
                                                 <button type="submit" class="btn btn-outline-dark">Edit</button>
@@ -36,6 +37,7 @@
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
                                         </td>
+                                            @endif
                                     </tr>
                                 @endforeach
 
@@ -45,10 +47,11 @@
                 </table>
             </td>
         </tr>
+        @if (!Auth::guest())
     </table>
     <form action="/employees/{{ $company->id }}/create">
         <button type="submit" class="btn btn-success">Add new Employee</button>
     </form>
-
+        @endif
 
 @endsection

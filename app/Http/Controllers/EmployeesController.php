@@ -6,6 +6,11 @@ use App\Employees;
 
 class EmployeesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['store', 'create', 'edit', 'update', 'destroy']);
+    }
+
     public function create($id)
     {	
     	$employee = Employees::findOrFail($id);

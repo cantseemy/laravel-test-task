@@ -5,7 +5,8 @@
     <title>Document</title>
 </head>
 <body>
-<h1>IMG</h1>
-<img src="storage/Lucky-Star-39729.gif" alt=""/>
+<div>
+    <h1 align="center">Companies & Employees</h1>
+</div>
 </body>
 </html>

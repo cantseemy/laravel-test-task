@@ -22,9 +22,11 @@
     <th>Companies</th>
     <tr>
         <td class="tc">
+            @if (!Auth::guest())
             <form action="/companies/create">
                 <button type="submit" class="btn btn-success">Create new company</button>
             </form>
+            @endif
             <table border="1" align="center" width="98%" class="table table-bordered">
                 <tr>
                     <td>Companies kist</td>
@@ -44,6 +46,7 @@
                                     <td>{{$compani->email}}</td>
                                     <td>{{$compani->website}}</td>
                                     <td><img src="storage/{{$compani->logo}}" width="100" height="100" alt=""></td>
+                                    @if (!Auth::guest())
                                     <td>
                                         <form action="/companies/{{ $compani->id }}/edit">
                                             <button type="submit" class="btn btn-outline-dark">Edit</button>
@@ -54,6 +57,7 @@
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
+                                    @endif
                                 </tr>
                             @endforeach
 
